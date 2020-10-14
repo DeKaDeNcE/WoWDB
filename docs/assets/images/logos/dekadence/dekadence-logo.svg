@@ -1,0 +1,28 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<filter id="drop-shadow">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="10" result="DROP" />
+			<feOffset in="SHADOW" dx="20" dy="20" result="DROPSHADOW" />
+			<feColorMatrix in="DROPSHADOW" result="FINALSHADOW" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0" />
+			<feMerge>
+				<feMergeNode in="FINALHADOW" />
+				<feMergeNode in="SourceGraphic" />
+			</feMerge>
+		</filter>
+		<filter id="soft-glow">
+			<feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken" />
+			<feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
+			<feFlood flood-color="#fff" result="glowColor" />
+			<feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+			<feMerge>
+				<feMergeNode in="softGlow_colored"/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+		</filter>
+	</defs>
+<!--	<g filter="url(#soft-glow)">-->
+<!--		<g filter="url(#drop-shadow)">-->
+			<path fill="#ccc" d="M531,847.9c-19,0-38,0-57,0c-1.4-0.3-2.8-0.7-4.2-0.8c-8.1-0.4-16.2-0.8-24.3-1.1c0-65.7,0-130.7,0-196.2 c13.5,0,26.7,0.3,39.8-0.1c27.9-0.7,55.4-3.9,81.8-13.8c38.9-14.5,65.3-40.9,76.4-81.4c6.9-25,8-50.6,4.3-76.2 c-6-42.2-27.6-73.2-66.8-91.1c-23.6-10.8-48.8-16-74.5-17c-30.1-1.2-60.3-0.9-90.4-1.2c-0.9,0-1.9,0.3-2.8,0.4c0,25.6,0,50.8,0,76.7 c35.3,0,70.4,0,105.4,0c0,44.5,0,88.4,0,133c-35.3,0-70.3,0-105.9,0c0,88.6,0,176.6,0,264.5c-66.3,0-132.1,0-198.2,0 c0-88.2,0-176.2,0-264.6c-22.5,0-44.6,0-66.7,0c0-44.3,0-88.7,0-133c22.1,0,44.2,0,66.8,0c0-2.6,0-4.7,0-6.8c0-85.2,0-170.4,0-255.6 c0-2.2,0.1-4.3,0.2-6.5c96.7,0,193.3,0,290,0c0.9,0.3,1.8,0.7,2.8,0.8c18.2,1.7,36.5,2.8,54.6,5.3c43.8,5.9,86.2,17.2,125.4,38.1 c83.3,44.3,137,111.9,157.3,204.7c10.5,48.2,10.5,96.8,2.9,145.4c-10.6,67.6-39,126.4-86.9,175.6c-56,57.5-124.7,88.9-204,98.1 C548.3,846,539.6,846.9,531,847.9z"/>
+<!--		</g>-->
+<!--	</g>-->
+</svg>
