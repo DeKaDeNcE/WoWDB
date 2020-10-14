@@ -1,4 +1,4 @@
-## <sub><img loading="lazy" width="38" height="38" alt="" src="https://dekadence.ro/wowdb/assets/images/logos/dekadence/dekadence-logo.svg" /></sub> WowDB [![Contribute](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/DeKaDeNcE/WoWDB/pulls) [![Discord](https://img.shields.io/discord/577080623227863040.svg?logo=discord)](https://discord.gg/uNX4SX4) [![GitHub last commit](https://img.shields.io/github/last-commit/DeKaDeNcE/WoWDB.svg)](#-wowdb-----) [![GitHub repo size](https://img.shields.io/github/repo-size/DeKaDeNcE/WoWDB.svg)](#-wowdb-----)
+## <sub><img loading="lazy" width="38" height="38" alt="" src="https://wowdb.dekadence.ro/assets/images/logos/dekadence/dekadence-logo.svg" /></sub> WowDB [![Contribute](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/DeKaDeNcE/WoWDB/pulls) [![Discord](https://img.shields.io/discord/577080623227863040.svg?logo=discord)](https://discord.gg/uNX4SX4) [![GitHub last commit](https://img.shields.io/github/last-commit/DeKaDeNcE/WoWDB.svg)](#-wowdb-----) [![GitHub repo size](https://img.shields.io/github/repo-size/DeKaDeNcE/WoWDB.svg)](#-wowdb-----)
 
 ---
 
@@ -8,12 +8,12 @@ WoWDB is a fronted app for data mining.
 
 ## 💬 <sub>Join us on Discord</sub>
 
-<sub><img width="18" height="18" alt="" src="https://dekadence.ro/wowdb/assets/images/discord-48.png" /></sub> [Discord](https://discord.gg/uNX4SX4)
+<sub><img width="18" height="18" alt="" src="https://wowdb.dekadence.ro/assets/images/discord-48.png" /></sub> [Discord](https://discord.gg/uNX4SX4)
 
 ## 👀 <sub>View a Live Demo</sub>
-[![This is currently under active development, and you must understand that some features are not finished.](https://dekadence.ro/wowdb/assets/images/under-development.svg)](#-view-a-live-demo)
+[![This is currently under active development, and you must understand that some features are not finished.](https://wowdb.dekadence.ro/assets/images/under-development.svg)](#-view-a-live-demo)
 
-* <sub><img loading="lazy" width="18" height="18" alt="" src="https://dekadence.ro/wowdb/assets/images/logos/dekadence/dekadence-logo.svg" /></sub> [https://dekadence.ro/wowdb/](https://dekadence.ro/wowdb/)
+* <sub><img loading="lazy" width="18" height="18" alt="" src="https://wowdb.dekadence.ro/assets/images/logos/dekadence/dekadence-logo.svg" /></sub> [https://wowdb.dekadence.ro/](https://wowdb.dekadence.ro/)
 
 ## 🚀 <sub>Getting started</sub>
 <details>
@@ -63,7 +63,7 @@ To create an optimised version of the app:
 | <img loading="lazy" width="24" height="24" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/brave/brave.svg" alt="Brave" />                                                       | Brave Software        | Brave             | Blink            | 1+              |
 | <img loading="lazy" width="24" height="24" src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/vivaldi/vivaldi.svg" alt="Vivaldi" />                                                 | Vivaldi Technologies  | Vivaldi           | Blink            | 1+              |
 
-[![* application support may vary](https://dekadence.ro/wowdb/assets/images/ie-notice.svg)](#-browser-support)
+[![* application support may vary](https://wowdb.dekadence.ro/assets/images/ie-notice.svg)](#-browser-support)
 
 ---
 </details>
@@ -87,10 +87,10 @@ To create an optimised version of the app:
 
 ## 📝 <sub>License</sub>
 
-Copyright © 2016 - 2020 DeKaDeNcE or its affiliates. All rights reserved.
+Copyright © 2016 - 2020 ÐeKaÐeNcE or its affiliates. All rights reserved.
 
-The source code provided by DeKaDeNcE are for non-commercial testing and evaluation
-purposes only. DeKaDeNcE reserves all rights not expressly granted.
+The source code provided by ÐeKaÐeNcE are for non-commercial testing and evaluation
+purposes only. ÐeKaÐeNcE reserves all rights not expressly granted.
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
@@ -98,7 +98,7 @@ all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-DEKADENCE OR THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ÐEKAÐENCE OR THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE OR OTHER DEALINGS IN THE SOFTWARE.
