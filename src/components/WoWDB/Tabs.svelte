@@ -1,5 +1,5 @@
 <style>
-	:global(.tabs) {
+	:global(.tabss) {
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -54,6 +54,6 @@
 	})
 </script>
 
-<div class="tabs">
+<div class="tabss">
 	<slot />
 </div>

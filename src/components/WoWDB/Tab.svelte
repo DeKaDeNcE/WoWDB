@@ -65,7 +65,7 @@
 	import ButtonIcon from './ButtonIcon.svelte'
 	import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
 
-	export let showCloseButton = false
+	export let showCloseButton = true
 
 	const dispatch = createEventDispatcher()
 	const tab = {id: id++}
