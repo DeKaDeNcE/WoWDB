@@ -143,13 +143,98 @@
 
 		<!-- region Styles -->
 
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-		<!--<link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />-->
+		<!--<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />-->
 		<link type="text/css" rel="stylesheet" href="assets/css/fonts.css" />
 		<link type="text/css" rel="stylesheet" href="assets/css/main.min.css" />
 
 		<!--suppress CssUnusedSymbol -->
 		<style type="text/css">
+			:root {
+				--accent-color: #cca300;
+				--background-image: url(assets/images/wallpapers/lion.jpg);
+				--icon-minimize: url(assets/images/buttons/minimize.svg);
+				--icon-maximize: url(assets/images/buttons/maximize.svg);
+				--icon-restore: url(assets/images/buttons/restore.svg);
+				--icon-exit: url(assets/images/buttons/exit.svg);
+				--icon-fullscreen: url(assets/images/buttons/fullscreen.svg);
+				--icon-unfullscreen: url(assets/images/buttons/unfullscreen.svg);
+				--icon-grid: url(assets/images/buttons/grid.svg);
+				--icon-list: url(assets/images/buttons/list.svg);
+				--icon-settings: url(assets/images/buttons/gear.svg);
+				--titlebar-decoration: url(assets/images/titlebar-decoration.svg);
+				--bg-transition: background-image 0.5s ease-in-out, filter 0.5s linear, backdrop-filter 0.5s linear;
+				--zoom-amount: 1;
+				--blur-amount: 4px;
+				--brightness-amount: 100%;
+				--opacity-amount: 100%;
+				--border-width: 1px;
+				--border-color: rgba(172, 172, 172, 0.5)
+			}
+
+			* {
+				scrollbar-base-color: #222;
+				scrollbar-3dlight-color: #222;
+				scrollbar-highlight-color: #222;
+				scrollbar-track-color: rgba(196, 196, 196, 0.2);
+				scrollbar-arrow-color: #111;
+				scrollbar-shadow-color: #222;
+				scrollbar-dark-shadow-color: #222;
+
+				scrollbar-width: thin;
+				scrollbar-face-color: rgba(255, 204, 0, 0.65);
+				scrollbar-color: rgba(255, 204, 0, 0.65) rgba(196, 196, 196, 0.2);
+			}
+
+			*::-webkit-scrollbar {
+				width: 7px;
+				height: 7px;
+			}
+
+			*::-webkit-scrollbar-track {
+				/*box-shadow: 0 0 10px #000;*/
+				border-radius: 5px;
+				background: rgba(196, 196, 196, 0.2);
+			}
+
+			*::-webkit-scrollbar-track:hover {
+				border-radius: 5px;
+				background: rgba(196, 196, 196, 0.3);
+			}
+
+			*::-webkit-scrollbar-thumb {
+				border-radius: 5px;
+				background: rgba(255, 204, 0, 0.35);
+			}
+
+			*::-webkit-scrollbar-thumb:hover {
+				background: rgba(255, 204, 0, 0.65);
+			}
+
+			/*noinspection CssOverwrittenProperties*/
+			:focus {
+				/*box-shadow: 0 0 15px var(--accent-color), 0 0 0 1px var(--accent-color) inset !important;*/
+				outline: none !important;
+			}
+
+			::-moz-selection {
+				background-color: var(--accent-color);
+				color: #fff;
+				text-shadow: none;
+			}
+
+			/*noinspection CssInvalidPseudoSelector*/
+			::-webkit-selection {
+				background-color: var(--accent-color);
+				color: #fff;
+				text-shadow: none;
+			}
+
+			::selection {
+				background-color: var(--accent-color);
+				color: #fff;
+				text-shadow: none;
+			}
+
 			body, html {
 				padding: 0;
 				margin: 0;
@@ -218,17 +303,6 @@
 				font-size: 0.9rem;
 				color: #666;
 				text-align: center;
-			}
-
-			a {
-				color: #cca300;
-				text-decoration: none;
-				cursor: pointer
-			}
-
-			a:active, a:focus, a:hover {
-				text-decoration: underline;
-				color: #fc0
 			}
 
 			table.error {

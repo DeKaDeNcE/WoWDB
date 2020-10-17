@@ -3,26 +3,20 @@
 	import { onMount } from 'svelte'
 	import axios from 'axios'
 
-	import Link from '../components/Link.svelte'
 	import Box from '../components/Box.svelte'
 	import Table from '../components/Table.svelte'
 	import FullScreen from '../components/FullScreen.svelte'
+	import Error from '../components/Error.svelte'
 
 	export let development = false
 	export let route = {}
 	export let isFrame = false
 
-	let table = [{}]
+	let table
 	let isFullScreen = false
 
-	const fetch = async (url) => {
-		const response = await axios(url)
-		return await response.data
-	}
-
-	onMount(async () => {
-		table = await fetch('assets/database/chrraces.json')
-		table = table.map(data => {
+	const filter = data => {
+		return data.map(data => {
 			return {
 				'#': data['ID'],
 				'Race': data['Name_lang'],
@@ -30,6 +24,10 @@
 				'Faction': data['FactionID']
 			}
 		})
+	}
+
+	onMount(async () => {
+		table = axios('assets/database/chrraces.json')
 	})
 </script>
 
@@ -38,7 +36,9 @@
 		{#await table}
 			<p>...waiting</p>
 		{:then data}
-			<Table style="height: 100%" columns={Object.keys(data[0])} rows={data} />
+		<!--<Table style="height: 100%" columns={Object.keys(data[0])} rows={filter(data)} />-->
+		{:catch error}
+			<Error error={error} />
 		{/await}
 	</Box>
 </FullScreen>

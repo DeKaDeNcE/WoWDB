@@ -7,6 +7,7 @@
 		background: #820000;
 		border: 1px solid #f00;
 		color: #fff;
+		overflow-x: auto;
 	}
 
 	.error pre.stack {
@@ -21,6 +22,8 @@
 </style>
 
 <script>
+	import Link from '../components/Link.svelte'
+
 	export let error = {
 		message: 'Cannot read property \'data\' of null',
 		stack: 'Error: GraphQL error: Cannot read property \'data\' of null\n' +
@@ -39,8 +42,8 @@
 
 <div class="error">
 	<b>{error.message}</b>
-	<p>GraphQL errors may be caused by inaccuracies in the database and should be reported to the applicable database vendor.</p>
-	<p>Please report any other errors by opening an issue on the project issue tracker.</p>
+	<!--<p>GraphQL errors may be caused by inaccuracies in the database and should be reported to the applicable database vendor.</p>-->
+	<p>Please report any other errors by opening an issue on the project <Link to={'https://github.com/DeKaDeNcE/WoWDB/issues'}>issue tracker</Link>.</p>
 	<p>Stacktrace:</p>
 	<pre class="stack">{error.stack}</pre>
 </div>

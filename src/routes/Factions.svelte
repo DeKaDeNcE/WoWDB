@@ -7,6 +7,7 @@
 	import Box from '../components/Box.svelte'
 	import Table from '../components/Table.svelte'
 	import FullScreen from '../components/FullScreen.svelte'
+	import Error from '../components/Error.svelte'
 
 	export let development = false
 	export let route = {}
@@ -38,6 +39,8 @@
 			<p>...waiting</p>
 		{:then data}
 			<Table style="height: 100%" columns={Object.keys(data[0])} rows={data} />
+		{:catch error}
+			<Error error={error} />
 		{/await}
 	</Box>
 </FullScreen>
