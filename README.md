@@ -86,6 +86,8 @@ To create an optimised version of the app:
 </details>
 
 ## 📝 <sub>License</sub>
+<details>
+<summary>Click to reveal</summary>
 
 MIT License
 
@@ -108,3 +110,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+</details>
