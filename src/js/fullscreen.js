@@ -17,7 +17,6 @@ let fn = (() => {
 		'webkitFullscreenEnabled',
 		'webkitfullscreenchange',
 		'webkitfullscreenerror'
-
 	] , [
 		'webkitRequestFullScreen',
 		'webkitCancelFullScreen',
@@ -25,7 +24,6 @@ let fn = (() => {
 		'webkitCancelFullScreen',
 		'webkitfullscreenchange',
 		'webkitfullscreenerror'
-
 	] , [
 		'mozRequestFullScreen',
 		'mozCancelFullScreen',

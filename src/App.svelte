@@ -1,15 +1,19 @@
 <!--suppress ES6UnusedImports, JSUnresolvedVariable, HtmlUnknownTarget, HtmlDeprecatedAttribute -->
 <script>
-	import { Route, router } from 'tinro'
+	import {Route, router} from 'tinro'
 	import WoWDB from './components/WoWDB.svelte'
 	import Quests from './routes/Quests.svelte'
 	import Races from './routes/Races.svelte'
-	import Link from './components/WoWDB/Link.svelte'
+	import Spells from './routes/Spells.svelte'
+	import Factions from './routes/Factions.svelte'
+	import Link from './components/Link.svelte'
+	import Homepage from './routes/Homepage.svelte'
+	import Error404 from './routes/Error404.svelte'
 
 	if (window.$sys.browser.isIE) {
 		document.documentElement.className += ' engine-trident'
 	} else if (window.$sys.browser.isEdgeHTML) {
-		document.documentElement.className +=  ' engine-edgehtml'
+		document.documentElement.className += ' engine-edgehtml'
 	} else if (window.$sys.browser.isChrome || window.$sys.browser.isOperaBlink || window.$sys.browser.isEdgeBlink || window.$sys.browser.isChromium) {
 		document.documentElement.className += ' engine-blink'
 	} else if (window.$sys.browser.isSafari || window.$sys.browser.isOperaPresto) {
@@ -48,21 +52,21 @@
 
 <main>
 	<Route path="/*">
-		<Route path="/"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
-	<!--	<Route path="/accounts"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/areas"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/characters"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/classes"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/factions"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/item-sets"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/items"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/maps"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/npcs"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-	<!--	<Route path="/objects"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<Route path="/"><Homepage development={development} route={route} isFrame={isFrame} /></Route>
+		<!--<Route path="/accounts"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/areas"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/characters"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/classes"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<Route path="/factions"><Factions development={development} route={route} isFrame={isFrame} /></Route>
+		<!--<Route path="/item-sets"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/items"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/maps"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/npcs"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<!--<Route path="/objects"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
 		<Route path="/quests"><Quests development={development} route={route} isFrame={isFrame} /></Route>
 		<Route path="/races"><Races development={development} route={route} isFrame={isFrame} /></Route>
-	<!--	<Route path="/spells"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<Route fallback><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
+		<Route path="/spells"><Spells development={development} route={route} isFrame={isFrame} /></Route>
+		<Route fallback><Error404 development={development} route={route} isFrame={isFrame} /></Route>
 	</Route>
 	<footer class="footer">
 		<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE

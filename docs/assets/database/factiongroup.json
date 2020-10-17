@@ -1,0 +1,34 @@
+[
+	{
+		"InternalName": "Player",
+		"Name_lang": "",
+		"ID": 1,
+		"MaskID": 0,
+		"HonorCurrencyTextureFileID": 0,
+		"ConquestCurrencyTextureFileID": 0
+	},
+	{
+		"InternalName": "Alliance",
+		"Name_lang": "Alliance",
+		"ID": 2,
+		"MaskID": 1,
+		"HonorCurrencyTextureFileID": 463450,
+		"ConquestCurrencyTextureFileID": 463448
+	},
+	{
+		"InternalName": "Horde",
+		"Name_lang": "Horde",
+		"ID": 3,
+		"MaskID": 2,
+		"HonorCurrencyTextureFileID": 463451,
+		"ConquestCurrencyTextureFileID": 463449
+	},
+	{
+		"InternalName": "Monster",
+		"Name_lang": "",
+		"ID": 4,
+		"MaskID": 3,
+		"HonorCurrencyTextureFileID": 0,
+		"ConquestCurrencyTextureFileID": 0
+	}
+]

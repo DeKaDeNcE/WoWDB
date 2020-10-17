@@ -1,10 +1,10 @@
 <script>
-	import Link from '../components/WoWDB/Link.svelte'
-	import Box from '../components/WoWDB/Box.svelte'
-	import List from '../components/WoWDB/List.svelte'
-	import ListItem from '../components/WoWDB/ListItem.svelte'
-	import TabbedBox from '../components/WoWDB/TabbedBox.svelte'
-	import Table from '../components/WoWDB/Table.svelte'
+	import Link from '../components/Link.svelte'
+	import Box from '../components/Box.svelte'
+	import List from '../components/List.svelte'
+	import ListItem from '../components/ListItem.svelte'
+	import TabbedBox from '../components/TabbedBox.svelte'
+	import Table from '../components/Table.svelte'
 
 	export let development = false
 	export let route = {}
