@@ -2,6 +2,9 @@
 <script>
 	import { Route, router } from 'tinro'
 	import WoWDB from './components/WoWDB.svelte'
+	import Quests from './routes/Quests.svelte'
+	import Races from './routes/Races.svelte'
+	import Link from './components/WoWDB/Link.svelte'
 
 	if (window.$sys.browser.isIE) {
 		document.documentElement.className += ' engine-trident'
@@ -22,32 +25,46 @@
 	let route = typeof $router === 'undefined' ? undefined : $router
 </script>
 
-<Route path="/*">
-	<Route path="/"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
-	<Route path="/wowdb/"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
-	<Route path="/WoWDB.git/docs/"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
-	<Route fallback>
-		<table class="error">
-			<tr>
-				<td>
-					<div class="error-wrapper">
-						<h1>The page you are looking for is temporarily unavailable!</h1>
-						<h2>
-							Sorry, the page you are looking for is currently unavailable, please try again later.<br />
-							These errors are monitored and will be fixed as soon as posible.<br />
-							Thank you for understanding!
-						</h2>
-						<div class="error-container">
-							<video muted autoplay loop controls>
-								<source src="assets/videos/monkey.mp4" type="video/mp4">
-								<source src="assets/videos/monkey.ogg" type="video/ogg">
-								<img src="assets/videos/monkey.jpg" alt="" />
-							</video>
-						</div>
-						<div class="error-caption">A team of highly trained monkeys has been dispatched to deal with this situation.</div>
-					</div>
-				</td>
-			</tr>
-		</table>
+<header class="header">
+	<nav>
+		<ul>
+			<li><Link to="/">WoWDB</Link></li>
+			<li><Link to="/accounts">Accounts</Link></li>
+			<li><Link to="/areas">Areas</Link></li>
+			<li><Link to="/characters">Characters</Link></li>
+			<li><Link to="/classes">Classes</Link></li>
+			<li><Link to="/factions">Factions</Link></li>
+			<li><Link to="/item-sets">Item Sets</Link></li>
+			<li><Link to="/items">Items</Link></li>
+			<li><Link to="/maps">Maps</Link></li>
+			<li><Link to="/npcs">NPCs</Link></li>
+			<li><Link to="/objects">Objects</Link></li>
+			<li><Link to="/quests">Quests</Link></li>
+			<li><Link to="/races">Races</Link></li>
+			<li><Link to="/spells">Spells</Link></li>
+		</ul>
+	</nav>
+</header>
+
+<main>
+	<Route path="/*">
+		<Route path="/"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
+	<!--	<Route path="/accounts"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/areas"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/characters"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/classes"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/factions"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/item-sets"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/items"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/maps"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/npcs"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+	<!--	<Route path="/objects"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<Route path="/quests"><Quests development={development} route={route} isFrame={isFrame} /></Route>
+		<Route path="/races"><Races development={development} route={route} isFrame={isFrame} /></Route>
+	<!--	<Route path="/spells"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
+		<Route fallback><WoWDB development={development} route={route} isFrame={isFrame} /></Route>
 	</Route>
-</Route>
+	<footer class="footer">
+		<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE
+	</footer>
+</main>

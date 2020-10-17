@@ -85,6 +85,10 @@
 	}
 </style>
 
-<div class="box" on:click {...$$props}>
+<script>
+	export let aside
+</script>
+
+<div class="box {aside ? 'aside' : ''}" on:click {...$$props}>
 	<slot/>
 </div>
