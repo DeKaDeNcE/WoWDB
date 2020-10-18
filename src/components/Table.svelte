@@ -28,7 +28,8 @@
 		position: sticky;
 		top: 0;
 		background: #212121;
-		box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset !important;
+		/*box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset !important;*/
+		box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.4) !important;
 	}
 
 	:global(.table thead tr:first-child td, .table thead tr:first-child th) {
@@ -58,6 +59,7 @@
 	import VirtualList from './VirtualList.svelte'
 
 	export let data = [{}]
+
 	let columns = Object.keys(data[0])
 </script>
 

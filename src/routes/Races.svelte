@@ -1,23 +1,13 @@
 <!--suppress JSValidateTypes, UnnecessaryReturnStatementJS -->
 <script>
+	import lzstring from 'lz-string'
+	import axios from 'axios'
+
 	import Box from '../components/Box.svelte'
 	import Table from '../components/Table.svelte'
 	import Error from '../components/Error.svelte'
 
-	let promise = fetchData('assets/database/chrraces.json')
 	let table = [{}]
-
-	async function fetchData(url) {
-		const res = await fetch(url)
-		const json = await res.json()
-
-		if (res.ok) {
-			table = filter(json)
-			return json
-		} else {
-			throw new Error(json)
-		}
-	}
 
 	const filter = data => {
 		return data.map(data => {
@@ -29,6 +19,22 @@
 			}
 		})
 	}
+
+	function fetchData(url) {
+		return axios({
+			url: url,
+			transformResponse: data => {
+				return filter(JSON.parse(lzstring.decompressFromUTF16(data)))
+			},
+			onDownloadProgress: e => {
+				console.log(e)
+			}
+		}).then(response => {
+			table = response.data
+		})
+	}
+
+	let promise = fetchData('assets/database/chrraces.db')
 </script>
 
 <Box style="height: 80vh; padding: 10px;">
