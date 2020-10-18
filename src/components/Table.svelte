@@ -1,7 +1,15 @@
 <style>
+	:global(.table-wrapper) {
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		border-radius: 5px;
+	}
+
 	:global(.table) {
 		width: 100%;
 		border-collapse: collapse;
+		border-spacing: 0;
 	}
 
 	:global(.table td, .table th) {
@@ -14,6 +22,13 @@
 	:global(.table th) {
 		text-align: left;
 		font-weight: bold;
+	}
+
+	:global(.table thead th) {
+		position: sticky;
+		top: 0;
+		background: #212121;
+		box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset !important;
 	}
 
 	:global(.table thead tr:first-child td, .table thead tr:first-child th) {
@@ -46,16 +61,17 @@
 	let columns = Object.keys(data[0])
 </script>
 
-<table class="table">
-	<thead>
+<div class="table-wrapper">
+	<table class="table">
+		<thead>
 		<tr>
 			{#each columns as column}
 				<th>{column}</th>
 			{/each}
 		</tr>
-	</thead>
-	<tbody>
-<!--		<VirtualList autoScroll={false} items={rows} let:item></VirtualList>-->
+		</thead>
+		<tbody>
+		<!--		<VirtualList autoScroll={false} items={rows} let:item></VirtualList>-->
 		{#each data as row}
 			<tr>
 				{#each columns as column}
@@ -63,5 +79,6 @@
 				{/each}
 			</tr>
 		{/each}
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</div>

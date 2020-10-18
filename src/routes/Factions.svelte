@@ -30,7 +30,7 @@
 	}
 </script>
 
-<Box style="height: 80vh; overflow: auto;">
+<Box style="height: 80vh; padding: 10px;">
 	{#await promise}
 		<p>...waiting</p>
 	{:then data}
