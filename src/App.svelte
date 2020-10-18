@@ -1,6 +1,7 @@
 <!--suppress ES6UnusedImports, JSUnresolvedVariable, HtmlUnknownTarget, HtmlDeprecatedAttribute -->
 <script>
 	import {Route, router} from 'tinro'
+	import FullScreen from './components/FullScreen.svelte'
 	import WoWDB from './components/WoWDB.svelte'
 	import Quests from './routes/Quests.svelte'
 	import Races from './routes/Races.svelte'
@@ -27,48 +28,50 @@
 	let isFrame = typeof window.$sys.environment.isFrame !== 'undefined' ? window.$sys.environment.isFrame : false
 	let development = typeof dev === 'undefined' ? undefined : dev
 	let route = typeof $router === 'undefined' ? undefined : $router
+	let isFullScreen = false
 </script>
 
-<header class="header">
-	<nav>
-		<ul>
-			<li><Link to="/">WoWDB</Link></li>
-			<li><Link to="/accounts">Accounts</Link></li>
-			<li><Link to="/areas">Areas</Link></li>
-			<li><Link to="/characters">Characters</Link></li>
-			<li><Link to="/classes">Classes</Link></li>
-			<li><Link to="/factions">Factions</Link></li>
-			<li><Link to="/item-sets">Item Sets</Link></li>
-			<li><Link to="/items">Items</Link></li>
-			<li><Link to="/maps">Maps</Link></li>
-			<li><Link to="/npcs">NPCs</Link></li>
-			<li><Link to="/objects">Objects</Link></li>
-			<li><Link to="/quests">Quests</Link></li>
-			<li><Link to="/races">Races</Link></li>
-			<li><Link to="/spells">Spells</Link></li>
-		</ul>
-	</nav>
-</header>
-
-<main>
-	<Route path="/*">
-		<Route path="/"><Homepage development={development} route={route} isFrame={isFrame} /></Route>
-		<!--<Route path="/accounts"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/areas"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/characters"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/classes"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<Route path="/factions"><Factions development={development} route={route} isFrame={isFrame} /></Route>
-		<!--<Route path="/item-sets"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/items"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/maps"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/npcs"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<!--<Route path="/objects"><WoWDB development={development} route={route} isFrame={isFrame} /></Route>-->
-		<Route path="/quests"><Quests development={development} route={route} isFrame={isFrame} /></Route>
-		<Route path="/races"><Races development={development} route={route} isFrame={isFrame} /></Route>
-		<Route path="/spells"><Spells development={development} route={route} isFrame={isFrame} /></Route>
-		<Route fallback><Error404 development={development} route={route} isFrame={isFrame} /></Route>
-	</Route>
-	<footer class="footer">
-		<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE
-	</footer>
-</main>
+<FullScreen let:onToggle on:change={e => isFullScreen = e.detail.isFullScreen}>
+	<header class="header">
+		<nav>
+			<ul>
+				<li><Link to="/">WoWDB</Link></li>
+				<li><Link to="/accounts">Accounts</Link></li>
+				<li><Link to="/areas">Areas</Link></li>
+				<li><Link to="/characters">Characters</Link></li>
+				<li><Link to="/classes">Classes</Link></li>
+				<li><Link to="/factions">Factions</Link></li>
+				<li><Link to="/item-sets">Item Sets</Link></li>
+				<li><Link to="/items">Items</Link></li>
+				<li><Link to="/maps">Maps</Link></li>
+				<li><Link to="/npcs">NPCs</Link></li>
+				<li><Link to="/objects">Objects</Link></li>
+				<li><Link to="/quests">Quests</Link></li>
+				<li><Link to="/races">Races</Link></li>
+				<li><Link to="/spells">Spells</Link></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<Route path="/*">
+			<Route path="/"><Homepage /></Route>
+			<!--<Route path="/accounts"><WoWDB /></Route>-->
+			<!--<Route path="/areas"><WoWDB /></Route>-->
+			<!--<Route path="/characters"><WoWDB /></Route>-->
+			<!--<Route path="/classes"><WoWDB /></Route>-->
+			<Route path="/factions"><Factions /></Route>
+			<!--<Route path="/item-sets"><WoWDB /></Route>-->
+			<!--<Route path="/items"><WoWDB /></Route>-->
+			<!--<Route path="/maps"><WoWDB /></Route>-->
+			<!--<Route path="/npcs"><WoWDB /></Route>-->
+			<!--<Route path="/objects"><WoWDB /></Route>-->
+			<Route path="/quests"><Quests /></Route>
+			<Route path="/races"><Races /></Route>
+			<Route path="/spells"><Spells /></Route>
+			<Route fallback><Error404 /></Route>
+		</Route>
+		<footer class="footer">
+			<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE
+		</footer>
+	</main>
+</FullScreen>

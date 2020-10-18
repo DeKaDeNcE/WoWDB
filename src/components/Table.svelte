@@ -42,20 +42,8 @@
 <script>
 	import VirtualList from './VirtualList.svelte'
 
-	export let columns = ['Header1', 'Header2', 'Header3']
-	export let rows = [{
-		Header1: 1,
-		Header2: 2,
-		Header3: 3
-	} , {
-		Header1: 1,
-		Header2: 2,
-		Header3: 3
-	} , {
-		Header1: 1,
-		Header2: 2,
-		Header3: 3
-	}]
+	export let data = [{}]
+	let columns = Object.keys(data[0])
 </script>
 
 <table class="table">
@@ -68,7 +56,7 @@
 	</thead>
 	<tbody>
 <!--		<VirtualList autoScroll={false} items={rows} let:item></VirtualList>-->
-		{#each rows as row}
+		{#each data as row}
 			<tr>
 				{#each columns as column}
 					<td>{row[column]}</td>

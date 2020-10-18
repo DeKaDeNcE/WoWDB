@@ -1,19 +1,23 @@
-<!--suppress JSValidateTypes -->
+<!--suppress JSValidateTypes, UnnecessaryReturnStatementJS -->
 <script>
-	import { onMount } from 'svelte'
-	import axios from 'axios'
-
 	import Box from '../components/Box.svelte'
 	import Table from '../components/Table.svelte'
-	import FullScreen from '../components/FullScreen.svelte'
 	import Error from '../components/Error.svelte'
 
-	export let development = false
-	export let route = {}
-	export let isFrame = false
+	let promise = fetchData('assets/database/chrraces.json')
+	let table = [{}]
 
-	let table
-	let isFullScreen = false
+	async function fetchData(url) {
+		const res = await fetch(url)
+		const json = await res.json()
+
+		if (res.ok) {
+			table = filter(json)
+			return json
+		} else {
+			throw new Error(json)
+		}
+	}
 
 	const filter = data => {
 		return data.map(data => {
@@ -25,20 +29,14 @@
 			}
 		})
 	}
-
-	onMount(async () => {
-		table = axios('assets/database/chrraces.json')
-	})
 </script>
 
-<FullScreen let:onToggle on:change={e => isFullScreen = e.detail.isFullScreen}>
-	<Box style="height: 80vh; overflow: auto;">
-		{#await table}
-			<p>...waiting</p>
-		{:then data}
-		<!--<Table style="height: 100%" columns={Object.keys(data[0])} rows={filter(data)} />-->
-		{:catch error}
-			<Error error={error} />
-		{/await}
-	</Box>
-</FullScreen>
+<Box style="height: 80vh; overflow: auto;">
+	{#await promise}
+		<p>...waiting</p>
+	{:then data}
+		<Table style="height: 100%" data={table} />
+	{:catch error}
+		<Error error={error} />
+	{/await}
+</Box>
