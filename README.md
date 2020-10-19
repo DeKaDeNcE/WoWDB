@@ -85,6 +85,12 @@ To create an optimised version of the app:
 ---
 </details>
 
+## <sub>Inspired from Spelunker</sub>
+
+---
+* <sub><img loading="lazy" width="18" height="18" alt="" src="https://spelunkerdb.com/favicon.png" /></sub> Website: [https://spelunkerdb.com/](https://spelunkerdb.com/)
+* <sub><img loading="lazy" width="18" height="18" alt="" src="https://spelunkerdb.com/favicon.png" /></sub> Repository: [https://github.com/wowserhq/spelunker](https://github.com/wowserhq/spelunker)
+---
 ## 📝 <sub>License</sub>
 <details>
 <summary>Click to reveal</summary>
