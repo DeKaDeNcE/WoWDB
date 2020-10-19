@@ -25,6 +25,19 @@
 		document.documentElement.className += ' engine-other'
 	}
 
+	if (window.$sys.feature.SERVICE_WORKERS) {
+		navigator.serviceWorker.register('sw.js').then(registration => {
+			registration.addEventListener('updatefound', () => {
+				let installingWorker = registration.installing
+				console.log('A new service worker is being installed:', installingWorker)
+			})
+		}, err => {
+			console.log('ServiceWorker registration failed: ', err)
+		})
+	} else {
+		console.log('ServiceWorker not supported')
+	}
+
 	let isFrame = typeof window.$sys.environment.isFrame !== 'undefined' ? window.$sys.environment.isFrame : false
 	let development = typeof dev === 'undefined' ? undefined : dev
 	let route = typeof $router === 'undefined' ? undefined : $router

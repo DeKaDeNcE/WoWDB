@@ -15,12 +15,7 @@
 		browser: {},
 		feature: {},
 		lib: global.$sys ? global.$sys.lib || {} : {},
-		info: {},
-		apps: {
-			emuchat: {
-				channels: []
-			}
-		}
+		info: {}
 	};
 
 	// region Platform

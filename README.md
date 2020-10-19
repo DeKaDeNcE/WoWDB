@@ -28,7 +28,7 @@ Install the dependencies...
 
 ### `npm run dev`
 
-Navigate to [localhost:5000/wowdb](http://localhost:5000/wowdb). You should see your app running. Edit a component file in `src`, save it, and hot reload will refresh the page automatically.
+Navigate to [localhost:5000](http://localhost:5000/). You should see your app running. Edit a component file in `src`, save it, and hot reload will refresh the page automatically.
 
 By default, the server will only respond to requests from localhost.
 
