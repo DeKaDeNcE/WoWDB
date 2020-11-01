@@ -10,14 +10,15 @@
 	button {
 		height: 32px;
 		width: 32px;
-		background: inherit;
-		color: #616161;
+		/*background: inherit;*/
+		background: transparent;
+		color: var(--accent-color);
 		font-size: 13px;
 		margin: 0;
 		padding: 0;
 		transition: all, .2s;
 		line-height: 32px;
-		border: 1px solid #e0e0e0;
+		border: 1px solid var(--accent-color);
 		border-right: none;
 		outline: none;
 	}
@@ -27,13 +28,14 @@
 	}
 
 	button:last-child {
-		border-right: 1px solid #e0e0e0;
-		border-radius: 0 4px 0 4px;
+		border-right: 1px solid var(--accent-color);
+		border-radius: 0 4px 4px 0;
 	}
 
 	button:not(.active):hover {
-		background: #eee;
+		background: var(--accent-color);
 		cursor: pointer;
+		color: #000;
 	}
 
 	button.text {
@@ -42,17 +44,18 @@
 	}
 
 	button.ellipse:hover {
-		background: inherit;
+		/*background: inherit;*/
 		cursor: default;
 	}
 
 	button.active {
-		background: #eee;
+		background: var(--accent-color);
 		font-weight: bold;
+		color: #000;
 	}
 
 	button.disabled:hover {
-		background: inherit;
+		/*background: inherit;*/
 		cursor: default;
 	}
 

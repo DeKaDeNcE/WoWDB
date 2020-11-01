@@ -63,7 +63,7 @@
 <!--suppress HtmlDeprecatedAttribute, JSUnresolvedLibraryURL, HtmlUnknownTarget -->
 <html class="wowdb" lang="en-us" prefix="og: http://ogp.me/ns/website#">
 	<head>
-		<title>WoWDB</title>
+		<title>ÐeKaÐeNcE WoWDB</title>
 
 		<!-- region Meta -->
 
@@ -196,6 +196,10 @@
 				background: rgba(196, 196, 196, 0.2);
 			}
 
+			/**::-webkit-scrollbar-track-piece:start {
+				top: 40px;
+			}*/
+
 			*::-webkit-scrollbar-track:hover {
 				border-radius: 5px;
 				background: rgba(196, 196, 196, 0.3);
@@ -253,7 +257,7 @@
 				-moz-osx-font-smoothing: grayscale;
 			}
 
-			main {
+			main.content {
 				max-width: 80%;
 				margin: 0 auto;
 			}
@@ -312,7 +316,7 @@
 				}
 			}
 
-			.header {
+			header {
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -323,14 +327,14 @@
 				border-bottom: 1px solid #000;
 			}
 
-			.header nav {
+			header nav {
 				display: flex;
 				height: 100%;
 				flex-direction: row;
 				align-items: center;
 			}
 
-			.header nav ul {
+			header nav ul {
 				display: flex;
 				height: 100%;
 				flex-direction: row;
@@ -342,17 +346,17 @@
 				margin: 0;
 			}
 
-			.header nav ul li {
+			header nav ul li {
 				display: block;
 			}
 
-			.header nav ul li a {
+			header nav ul li a {
 				display: block;
 				height: 100%;
 				padding: 16px 6px;
 			}
 
-			.footer {
+			footer {
 				margin: 20px 10px;
 				font-size: 0.9rem;
 				color: #666;

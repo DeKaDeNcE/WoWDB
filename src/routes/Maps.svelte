@@ -2,11 +2,9 @@
 <script>
 	import lzstring from 'lz-string'
 	import axios from 'axios'
-	import { Datatable, rows } from '../components/DataTable'
-	import { data as dataex } from '../data.example.js'
+	import { DataTable, rows } from '../components/DataTable'
 
 	import Box from '../components/Box.svelte'
-	import Table from '../components/Table.svelte'
 	import Error from '../components/Error.svelte'
 	import ProgressBar from '../components/ProgressBar.svelte'
 
@@ -21,8 +19,6 @@
 			paginationRowCount: true,
 		}
 	}
-
-	console.log(dataex)
 
 	let table = [{}]
 	let val = 0
@@ -62,7 +58,7 @@
 		return axios({
 			url: url,
 			transformResponse: data => {
-				return filter(JSON.parse(lzstring.decompressFromUTF16(data)))
+				return JSON.parse(lzstring.decompressFromUTF16(data))
 			},
 			onDownloadProgress: e => {
 				val = e.loaded
@@ -70,6 +66,8 @@
 			}
 		}).then(response => {
 			table = response.data
+
+			console.log(table)
 		})
 	}
 
@@ -80,28 +78,28 @@
 	{#await promise}
 		<ProgressBar val={val} max={max} />
 	{:then data}
-		<Datatable settings={settings} data={dataex}>
+		<DataTable settings={settings} data={table}>
 			<thead>
-				<th data-key="id">ID</th>
-				<th data-key="first_name">First Name</th>
-				<th data-key="last_name">Last Name</th>
-				<th data-key="email">Email</th>
-				<th data-key="ip_address">IP Adress</th>
+				<th data-key="ID">#</th>
+				<th data-key="MapName_lang">Name</th>
+				<th data-key="MapType">Type</th>
+				<th data-key="InstanceType">Instance Type</th>
+				<th data-key="MaxPlayers">Max Players</th>
+				<th data-key="MapDescription0_lang">Description</th>
 			</thead>
 			<tbody>
 				{#each $rows as row}
 					<tr>
-						<td>{row.id}</td>
-						<td>{row.first_name}</td>
-						<td>{row.last_name}</td>
-						<td>{row.email}</td>
-						<td>{row.ip_address}</td>
+						<td>{row['ID']}</td>
+						<td>{row['MapName_lang']}</td>
+						<td>{row['MapType']}</td>
+						<td>{row['InstanceType']}</td>
+						<td>{row['MaxPlayers']}</td>
+						<td>{row['MapDescription0_lang']}</td>
 					</tr>
 				{/each}
 			</tbody>
-		</Datatable>
-
-		<Table style="height: 100%" data={table} />
+		</DataTable>
 	{:catch error}
 		<Error error={error} />
 	{/await}

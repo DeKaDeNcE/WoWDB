@@ -1,19 +1,24 @@
 <!--suppress HtmlFormInputWithoutLabel, JSValidateTypes -->
 <style>
 	section {
-		position: -webkit-sticky;
+		/*position: -webkit-sticky;*/
 		position: sticky;
 		top: 0;
 		left: 0;
-		z-index: 6;
-		background: inherit;
-		border-bottom: 1px solid #eee;
+		/*background: inherit;*/
+		/*border-bottom: 1px solid #eee;*/
+	}
+
+	thead {
+		background: #212121;
+		/*box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset !important;*/
+		box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.4) !important;
 	}
 
 	th {
 		padding: 10px 0;
 		text-align: center;
-		border-bottom: 1px solid #eee;
+		/*border-bottom: 1px solid #eee;*/
 	}
 
 	th.sortable {
@@ -28,7 +33,7 @@
 	th.sortable span:before,
 	th.sortable span:after {
 		border: 4px solid transparent;
-		content: "";
+		content: '';
 		display: block;
 		height: 0;
 		right: 0;
@@ -59,7 +64,8 @@
 		padding: 0;
 		margin: 0;
 		background-image: none;
-		border: 1px solid #fafafa;
+		/*border: 1px solid #fafafa;*/
+		box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset !important;
 	}
 
 	th.filter input {
@@ -68,15 +74,16 @@
 		margin: 0;
 		height: 25px;
 		width: 100%;
-		border: none;;
+		border: none;
 		text-align: center;
 		outline: none;
 		border-radius: 0;
 		font-size: 14px;
+		color: var(--accent-color);
 	}
 
 	th.filter input::placeholder {
-		color: #bdbdbd;
+		color: rgba(255, 255, 255, 0.3);
 		font-style: italic;
 		font-size: 13px;
 	}
@@ -129,7 +136,7 @@
 	<thead class="{theadClassList}">
 		<tr>
 			{#each $columns as th}
-				<th nowrap style="width:{th.width}" on:click={(e) => sort(e.target, th.key)} class={th.classList} class:sortable={th.key && $options.sortable === true}>{@html th.html}<span></span></th>
+				<th style="width:{th.width}" on:click={(e) => sort(e.target, th.key)} class={th.classList} class:sortable={th.key && $options.sortable === true}>{@html th.html}<span></span></th>
 			{/each}
 		</tr>
 		{#if $options.columnFilter === true}
@@ -137,7 +144,7 @@
 				{#each $columns as th}
 					<th class="filter" style="width:{th.width};height:25px;">
 						{#if th.key}
-							<input type="text" placeholder="{$options.labels.filter}" class="browser-default" on:input={(e) => filter(th.key, e.target.value)} />
+							<input type="text" placeholder="{$options.labels.filter}" class="browser-default" on:input={e => filter(th.key, e.target.value)} />
 						{/if}
 					</th>
 				{/each}

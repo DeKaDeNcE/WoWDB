@@ -5,6 +5,7 @@
 	import WoWDB from './components/WoWDB.svelte'
 	import Maps from './routes/Maps.svelte'
 	import Quests from './routes/Quests.svelte'
+	import Classes from './routes/Classes.svelte'
 	import Races from './routes/Races.svelte'
 	import Spells from './routes/Spells.svelte'
 	import Factions from './routes/Factions.svelte'
@@ -54,38 +55,39 @@
 				<li><Link to="/characters">Characters</Link></li>
 				<li><Link to="/maps">Maps</Link></li>
 				<li><Link to="/areas">Areas</Link></li>
-				<li><Link to="/classes">Classes</Link></li>
 				<li><Link to="/factions">Factions</Link></li>
+				<li><Link to="/races">Races</Link></li>
+				<li><Link to="/classes">Classes</Link></li>
 				<li><Link to="/item-sets">Item Sets</Link></li>
 				<li><Link to="/items">Items</Link></li>
 				<li><Link to="/npcs">NPCs</Link></li>
 				<li><Link to="/objects">Objects</Link></li>
 				<li><Link to="/quests">Quests</Link></li>
-				<li><Link to="/races">Races</Link></li>
 				<li><Link to="/spells">Spells</Link></li>
 			</ul>
 		</nav>
 	</header>
-	<main>
+	<main class="content">
 		<Route path="/*">
 			<Route path="/"><Homepage /></Route>
 			<!--<Route path="/accounts"><WoWDB /></Route>-->
 			<!--<Route path="/characters"><WoWDB /></Route>-->
 			<Route path="/maps"><Maps /></Route>
 			<!--<Route path="/areas"><WoWDB /></Route>-->
-			<!--<Route path="/classes"><WoWDB /></Route>-->
 			<Route path="/factions"><Factions /></Route>
+			<Route path="/races"><Races /></Route>
+			<Route path="/classes"><Classes /></Route>
 			<!--<Route path="/item-sets"><WoWDB /></Route>-->
 			<!--<Route path="/items"><WoWDB /></Route>-->
 			<!--<Route path="/npcs"><WoWDB /></Route>-->
 			<!--<Route path="/objects"><WoWDB /></Route>-->
 			<Route path="/quests"><Quests /></Route>
-			<Route path="/races"><Races /></Route>
+
 			<Route path="/spells"><Spells /></Route>
 			<Route fallback><Error404 /></Route>
 		</Route>
-		<footer class="footer">
-			<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE
-		</footer>
 	</main>
+	<footer class="footer">
+		<Link to="https://github.com/DeKaDeNcE/WoWDB" target="_blank">WoWDB</Link> · Copyright © 2020 ÐeKaÐeNcE
+	</footer>
 </FullScreen>

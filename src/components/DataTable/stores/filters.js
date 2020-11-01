@@ -15,6 +15,7 @@ const createLocal = () => {
 		})
 	}
 }
+
 export const local = createLocal()
 
 const createGlobal = () => {
