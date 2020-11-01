@@ -20,11 +20,7 @@
 		}
 	}
 
-	let table = [{}]
-	let val = 0
-	let max = 0
-
-	let mapTypes = [
+	const mapTypes = [
 		'Unknown',
 		'Continent',
 		'Instance',
@@ -32,7 +28,7 @@
 		'Garrison'
 	]
 
-	let instanceTypes = [
+	const instanceTypes = [
 		'Normal',
 		'Instance',
 		'Raid',
@@ -41,18 +37,9 @@
 		'Scenario'
 	]
 
-	const filter = data => {
-		return data.map(data => {
-			return {
-				'#': data['ID'],
-				'Name': data['MapName_lang'],
-				'Type': typeof mapTypes[data['MapType']] !== 'undefined' ? mapTypes[data['MapType']] : 'Unknown',
-				'Instance Type': typeof instanceTypes[data['InstanceType']] !== 'undefined' ? instanceTypes[data['InstanceType']] : 'Unknown',
-				'Max Players': data['MaxPlayers'] === 0 ? '∞' : data['MaxPlayers'],
-				'Description': data['MapDescription0_lang'] !== data['MapDescription1_lang'] ? `<p><b>Alliance:</b> ${data['MapDescription1_lang']}</p><p><b>Horde:</b> ${data['MapDescription0_lang']}</p>` : data['MapDescription0_lang'],
-			}
-		})
-	}
+	let table = [{}]
+	let val = 0
+	let max = 0
 
 	function fetchData(url) {
 		return axios({
@@ -66,8 +53,6 @@
 			}
 		}).then(response => {
 			table = response.data
-
-			console.log(table)
 		})
 	}
 
@@ -92,10 +77,10 @@
 					<tr>
 						<td>{row['ID']}</td>
 						<td>{row['MapName_lang']}</td>
-						<td>{row['MapType']}</td>
-						<td>{row['InstanceType']}</td>
-						<td>{row['MaxPlayers']}</td>
-						<td>{row['MapDescription0_lang']}</td>
+						<td>{typeof mapTypes[row['MapType']] !== 'undefined' ? mapTypes[row['MapType']] : 'Unknown'}</td>
+						<td>{typeof instanceTypes[row['InstanceType']] !== 'undefined' ? instanceTypes[row['InstanceType']] : 'Unknown'}</td>
+						<td>{row['MaxPlayers'] === 0 ? '∞' : row['MaxPlayers']}</td>
+						<td>{@html row['MapDescription0_lang'] !== row['MapDescription1_lang'] ? `<p><b>Alliance:</b> ${row['MapDescription1_lang']}</p><p><b>Horde:</b> ${row['MapDescription0_lang']}</p>` : row['MapDescription0_lang']}</td>
 					</tr>
 				{/each}
 			</tbody>
