@@ -2,11 +2,27 @@
 <script>
 	import lzstring from 'lz-string'
 	import axios from 'axios'
+	import { Datatable, rows } from '../components/DataTable'
+	import { data as dataex } from '../data.example.js'
 
 	import Box from '../components/Box.svelte'
 	import Table from '../components/Table.svelte'
 	import Error from '../components/Error.svelte'
 	import ProgressBar from '../components/ProgressBar.svelte'
+
+	const settings = {
+		sortable: true,
+		pagination: true,
+		rowPerPage: 50,
+		columnFilter: true,
+		blocks: {
+			searchInput: true,
+			paginationButtons: true,
+			paginationRowCount: true,
+		}
+	}
+
+	console.log(dataex)
 
 	let table = [{}]
 	let val = 0
@@ -54,8 +70,6 @@
 			}
 		}).then(response => {
 			table = response.data
-
-			console.log(table)
 		})
 	}
 
@@ -66,6 +80,27 @@
 	{#await promise}
 		<ProgressBar val={val} max={max} />
 	{:then data}
+		<Datatable settings={settings} data={dataex}>
+			<thead>
+				<th data-key="id">ID</th>
+				<th data-key="first_name">First Name</th>
+				<th data-key="last_name">Last Name</th>
+				<th data-key="email">Email</th>
+				<th data-key="ip_address">IP Adress</th>
+			</thead>
+			<tbody>
+				{#each $rows as row}
+					<tr>
+						<td>{row.id}</td>
+						<td>{row.first_name}</td>
+						<td>{row.last_name}</td>
+						<td>{row.email}</td>
+						<td>{row.ip_address}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</Datatable>
+
 		<Table style="height: 100%" data={table} />
 	{:catch error}
 		<Error error={error} />
