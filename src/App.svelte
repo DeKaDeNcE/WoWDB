@@ -3,6 +3,7 @@
 	import {Route, router} from 'tinro'
 	import FullScreen from './components/FullScreen.svelte'
 	import WoWDB from './components/WoWDB.svelte'
+	import Maps from './routes/Maps.svelte'
 	import Quests from './routes/Quests.svelte'
 	import Races from './routes/Races.svelte'
 	import Spells from './routes/Spells.svelte'
@@ -50,13 +51,13 @@
 			<ul>
 				<li><Link to="/">WoWDB</Link></li>
 				<li><Link to="/accounts">Accounts</Link></li>
-				<li><Link to="/areas">Areas</Link></li>
 				<li><Link to="/characters">Characters</Link></li>
+				<li><Link to="/maps">Maps</Link></li>
+				<li><Link to="/areas">Areas</Link></li>
 				<li><Link to="/classes">Classes</Link></li>
 				<li><Link to="/factions">Factions</Link></li>
 				<li><Link to="/item-sets">Item Sets</Link></li>
 				<li><Link to="/items">Items</Link></li>
-				<li><Link to="/maps">Maps</Link></li>
 				<li><Link to="/npcs">NPCs</Link></li>
 				<li><Link to="/objects">Objects</Link></li>
 				<li><Link to="/quests">Quests</Link></li>
@@ -69,13 +70,13 @@
 		<Route path="/*">
 			<Route path="/"><Homepage /></Route>
 			<!--<Route path="/accounts"><WoWDB /></Route>-->
-			<!--<Route path="/areas"><WoWDB /></Route>-->
 			<!--<Route path="/characters"><WoWDB /></Route>-->
+			<Route path="/maps"><Maps /></Route>
+			<!--<Route path="/areas"><WoWDB /></Route>-->
 			<!--<Route path="/classes"><WoWDB /></Route>-->
 			<Route path="/factions"><Factions /></Route>
 			<!--<Route path="/item-sets"><WoWDB /></Route>-->
 			<!--<Route path="/items"><WoWDB /></Route>-->
-			<!--<Route path="/maps"><WoWDB /></Route>-->
 			<!--<Route path="/npcs"><WoWDB /></Route>-->
 			<!--<Route path="/objects"><WoWDB /></Route>-->
 			<Route path="/quests"><Quests /></Route>

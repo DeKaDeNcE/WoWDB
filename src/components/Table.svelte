@@ -68,16 +68,16 @@
 		<thead>
 		<tr>
 			{#each columns as column}
-				<th>{column}</th>
+				<th>{@html column}</th>
 			{/each}
 		</tr>
 		</thead>
 		<tbody>
-		<!--		<VirtualList autoScroll={false} items={rows} let:item></VirtualList>-->
+		<!--<VirtualList autoScroll={false} items={rows} let:item></VirtualList>-->
 		{#each data as row}
 			<tr>
 				{#each columns as column}
-					<td>{row[column]}</td>
+					<td>{@html row[column]}</td>
 				{/each}
 			</tr>
 		{/each}

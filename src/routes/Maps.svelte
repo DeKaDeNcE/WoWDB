@@ -12,13 +12,32 @@
 	let val = 0
 	let max = 0
 
+	let mapTypes = [
+		'Unknown',
+		'Continent',
+		'Instance',
+		'Transport',
+		'Garrison'
+	]
+
+	let instanceTypes = [
+		'Normal',
+		'Instance',
+		'Raid',
+		'Battleground',
+		'Arena',
+		'Scenario'
+	]
+
 	const filter = data => {
 		return data.map(data => {
 			return {
 				'#': data['ID'],
-				'Race': data['Name_lang'],
-				'Starting Level': data['StartingLevel'],
-				'Faction': data['FactionID']
+				'Name': data['MapName_lang'],
+				'Type': typeof mapTypes[data['MapType']] !== 'undefined' ? mapTypes[data['MapType']] : 'Unknown',
+				'Instance Type': typeof instanceTypes[data['InstanceType']] !== 'undefined' ? instanceTypes[data['InstanceType']] : 'Unknown',
+				'Max Players': data['MaxPlayers'] === 0 ? '∞' : data['MaxPlayers'],
+				'Description': data['MapDescription0_lang'] !== data['MapDescription1_lang'] ? `<p><b>Alliance:</b> ${data['MapDescription1_lang']}</p><p><b>Horde:</b> ${data['MapDescription0_lang']}</p>` : data['MapDescription0_lang'],
 			}
 		})
 	}
@@ -35,10 +54,12 @@
 			}
 		}).then(response => {
 			table = response.data
+
+			console.log(table)
 		})
 	}
 
-	let promise = fetchData('assets/database/chrraces.db')
+	let promise = fetchData('assets/database/map.db')
 </script>
 
 <Box style="height: 80vh; padding: 10px;">

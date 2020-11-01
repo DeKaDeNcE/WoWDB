@@ -1,4 +1,26 @@
-const polka = require('polka')
+const blizzard = require('./blizzard.js').initialize({
+	key: '14e57655eaf342e78838f07903d69e12', //process.env.BLIZZARD_CLIENT_ID,
+	secret: 'g9l4cj2Xcb94L0XFi8VMMT92Vg1jCf8z', //process.env.BLIZZARD_CLIENT_SECRET,
+	origin: 'us',
+	locale: 'en_US'
+});
+
+async function example () {
+	try {
+		await blizzard.getApplicationToken().then(response => {
+			blizzard.defaults.token = response.data.access_token
+		})
+		const item = await blizzard.wow.item({ id: 168185 })
+
+		console.log(item)
+	} catch (err) {
+		console.error(err)
+	}
+}
+
+example()
+
+/*const polka = require('polka')
 const { json } = require('body-parser')
 const { makeExecutableSchema } = require('graphql-tools')
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
@@ -39,7 +61,7 @@ polka().use(json()).post('/graphql', graphqlExpress(req => ({
 	})).listen(PORT, err => {
 		if (err) throw err
 		console.log(`> Ready on localhost:${PORT}`)
-	})
+	})*/
 
 console.log('%c  ╦ ╦╔═╗╦ ╦╔╦═╗╔╗   \n' +
 			  '  ║║║║ ║║║║ ║ ║╠╩╗  \n' +
