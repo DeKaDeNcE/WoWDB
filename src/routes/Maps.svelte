@@ -2,8 +2,8 @@
 <script>
 	import lzstring from 'lz-string'
 	import axios from 'axios'
-	import { DataTable, rows } from '../components/DataTable'
 
+	import { DataTable, rows } from '../components/DataTable'
 	import Box from '../components/Box.svelte'
 	import Error from '../components/Error.svelte'
 	import ProgressBar from '../components/ProgressBar.svelte'
