@@ -88,7 +88,7 @@ To create an optimised version of the app:
 | Svelte Simple Datatable | [geoflux.io/vincjo/svelte-simple-datatables](https://geoflux.io/vincjo/svelte-simple-datatables/) | [github.com/vincjo/svelte-simple-datatables](https://github.com/vincjo/svelte-simple-datatables)   | [MIT](https://github.com/vincjo/svelte-simple-datatables/blob/master/LICENSE)      |
 | Svelte Tabs             | [joeattardi.github.io/svelte-tabs](https://joeattardi.github.io/svelte-tabs/)                     | [github.com/joeattardi/svelte-tabs](https://github.com/joeattardi/svelte-tabs)                     | ❓                                                                                 |
 | Svelte Virtual List     | [svelte.dev/repl](https://svelte.dev/repl/f78ddd84a1a540a9a40512df39ef751b)                       | [github.com/sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list)         | [MIT](https://github.com/sveltejs/svelte-virtual-list/blob/master/LICENSE)         |
-| wow.export              | [wow.tools/export(https://wow.tools/export/)                                                      | [github.com/Kruithne/wow.export](https://github.com/Kruithne/wow.export)                           | [MIT](https://github.com/Kruithne/wow.export/blob/master/LICENSE)         |
+| wow.export              | [wow.tools/export](https://wow.tools/export/)                                                      | [github.com/Kruithne/wow.export](https://github.com/Kruithne/wow.export)                           | [MIT](https://github.com/Kruithne/wow.export/blob/master/LICENSE)         |
 ---
 </details>
 
