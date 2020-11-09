@@ -1,0 +1,71 @@
+[{
+	"name": "Vanilla",
+	"version": "1.12.2",
+	"build": 6005,
+	"release": "Oct 13 2006",
+	"x64": false,
+	"eol": true
+} , {
+	"name": "Burning Crusade",
+	"version": "2.4.3",
+	"build": 8606,
+	"release": "Jul 15 2008",
+	"x64": false,
+	"eol": true
+} , {
+	"name": "Wrath of the Lich King",
+	"version": "3.3.5a",
+	"build": 12340,
+	"release": "Jun 29 2010",
+	"x64": false,
+	"eol": true
+} , {
+	"name": "Cataclysm",
+	"version": "4.3.4",
+	"build": 15595,
+	"release": "Apr 10 2012",
+	"x64": true,
+	"eol": true
+} , {
+	"name": "Mists of Pandaria",
+	"version": "5.4.8",
+	"build": 18414,
+	"release": "Jun 13 2014",
+	"x64": true,
+	"eol": true
+} , {
+	"name": "Warlords of Draenor",
+	"version": "6.2.4",
+	"build": 21742,
+	"release": "May 5 2016",
+	"x64": true,
+	"eol": true
+} , {
+	"name": "Legion",
+	"version": "7.3.5",
+	"build": 26972,
+	"release": "Jun 28 2018",
+	"x64": true,
+	"eol": true
+} , {
+	"name": "Battle for Azeroth",
+	"version": "8.3.7",
+	"build": 35662,
+	"release": "Aug 24 2020",
+	"x64": true,
+	"eol": true
+} , {
+	"name": "Classic",
+	"version": "1.13.5",
+	"build": 36325,
+	"release": "Oct 20 2020",
+	"x64": true,
+	"eol": false
+} , {
+	"name": "Shadowlands",
+	"version": "9.0.1",
+	"build": 36492,
+	"release": "Oct 30 2020",
+	"x64": true,
+	"eol": false
+}]

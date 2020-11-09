@@ -11,6 +11,7 @@
 	import Factions from './routes/Factions.svelte'
 	import Link from './components/Link.svelte'
 	import Homepage from './routes/Homepage.svelte'
+	import Expansions from './routes/Expansions.svelte'
 	import Error404 from './routes/Error404.svelte'
 
 	if (window.$sys.browser.isIE) {
@@ -64,6 +65,7 @@
 				<li><Link to="/objects">Objects</Link></li>
 				<li><Link to="/quests">Quests</Link></li>
 				<li><Link to="/spells">Spells</Link></li>
+				<li><Link to="/expansions">Expansions</Link></li>
 			</ul>
 		</nav>
 	</header>
@@ -82,8 +84,8 @@
 			<!--<Route path="/npcs"><WoWDB /></Route>-->
 			<!--<Route path="/objects"><WoWDB /></Route>-->
 			<Route path="/quests"><Quests /></Route>
-
 			<Route path="/spells"><Spells /></Route>
+			<Route path="/expansions"><Expansions /></Route>
 			<Route fallback><Error404 /></Route>
 		</Route>
 	</main>
